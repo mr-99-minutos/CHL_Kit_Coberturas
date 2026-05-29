@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Kit Cobertura — 99minutos Chile</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { min-height: 100vh; font-family: 'Segoe UI', Arial, sans-serif; background: #f0f2f5; color: #111; }
+
+    /* ── Header ── */
+    header {
+      background: #111;
+      color: #fff;
+      padding: 20px 32px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      border-bottom: 3px solid #e53935;
+    }
+    .logo-badge {
+      background: #e53935;
+      color: #fff;
+      font-weight: 800;
+      font-size: 15px;
+      padding: 6px 12px;
+      border-radius: 6px;
+      letter-spacing: .5px;
+      flex-shrink: 0;
+    }
+    header h1 { font-size: 20px; font-weight: 700; }
+    header p  { font-size: 12px; color: #aaa; margin-top: 2px; }
+
+    /* ── Main ── */
+    main { max-width: 1100px; margin: 0 auto; padding: 32px 24px; }
+
+    .section-title {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: #888;
+      margin-bottom: 14px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid #ddd;
+    }
+
+    /* ── Grid ── */
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 18px; margin-bottom: 36px; }
+
+    /* ── Card ── */
+    .card {
+      background: #fff;
+      border-radius: 10px;
+      border: 1px solid #e0e0e0;
+      padding: 22px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      text-decoration: none;
+      color: inherit;
+      transition: box-shadow .18s, transform .18s, border-color .18s;
+      cursor: pointer;
+    }
+    .card:hover {
+      box-shadow: 0 6px 24px rgba(0,0,0,.12);
+      transform: translateY(-3px);
+      border-color: #bbb;
+    }
+    .card-header { display: flex; align-items: flex-start; gap: 12px; }
+    .card-icon {
+      width: 44px; height: 44px; border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 22px; flex-shrink: 0;
+    }
+    .card-meta { flex: 1; }
+    .card-title { font-size: 15px; font-weight: 700; line-height: 1.2; }
+    .card-sub   { font-size: 11px; color: #888; margin-top: 3px; }
+    .card-desc  { font-size: 12px; color: #555; line-height: 1.5; }
+    .card-tags  { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 4px; }
+    .tag {
+      font-size: 10px; font-weight: 600; padding: 2px 8px;
+      border-radius: 10px; letter-spacing: .3px;
+    }
+    .tag-blue   { background: #e3eeff; color: #1a56c4; }
+    .tag-green  { background: #e6f4ea; color: #2e7d32; }
+    .tag-purple { background: #f0e6ff; color: #6a1b9a; }
+    .tag-orange { background: #fff3e0; color: #e65100; }
+    .tag-teal   { background: #e0f4f1; color: #00695c; }
+
+    .card-footer {
+      display: flex; align-items: center; justify-content: space-between;
+      padding-top: 10px; border-top: 1px solid #f0f0f0;
+      font-size: 11px; color: #aaa;
+    }
+    .card-url { font-family: monospace; font-size: 10px; color: #bbb; word-break: break-all; }
+    .open-btn {
+      background: #111; color: #fff; border: none;
+      padding: 5px 12px; border-radius: 5px; font-size: 11px;
+      font-weight: 600; cursor: pointer; flex-shrink: 0;
+      text-decoration: none; transition: background .15s;
+    }
+    .open-btn:hover { background: #333; }
+
+    /* ── WIP card ── */
+    .card.wip { opacity: .55; pointer-events: none; }
+    .card.wip .card-icon { filter: grayscale(1); }
+    .wip-badge {
+      font-size: 9px; font-weight: 700; padding: 1px 6px;
+      border-radius: 4px; background: #eee; color: #888;
+      letter-spacing: .5px; text-transform: uppercase;
+    }
+
+    /* ── Footer ── */
+    footer {
+      text-align: center; padding: 20px;
+      font-size: 11px; color: #bbb;
+      border-top: 1px solid #e0e0e0;
+      margin-top: 8px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <span class="logo-badge">99minutos</span>
+  <div>
+    <h1>Kit de Cobertura — Chile</h1>
+    <p>Portal de herramientas WMS · Sorter Loops · Mapas de polígonos</p>
+  </div>
+</header>
+
+<main>
+
+  <!-- WMS / Sorter Loop -->
+  <p class="section-title">WMS — Sorter Loop</p>
+  <div class="grid">
+
+    <a class="card" href="https://mr-99-minutos.github.io/CHL_SPT_WMS/" target="_blank">
+      <div class="card-header">
+        <div class="card-icon" style="background:#e3eeff">📦</div>
+        <div class="card-meta">
+          <div class="card-title">SPT Regular</div>
+          <div class="card-sub">Sorter Loop · RMRU</div>
+        </div>
+      </div>
+      <div class="card-desc">
+        Layout del sorter con 259 posiciones. Fingers H–O (negro/izquierda) y A–G (blanco/derecha).
+        Mapa de cobertura coloreado por proveedor.
+      </div>
+      <div class="card-tags">
+        <span class="tag tag-blue">Regular</span>
+        <span class="tag tag-blue">259 posiciones</span>
+        <span class="tag tag-green">Mapa</span>
+      </div>
+      <div class="card-footer">
+        <span class="card-url">mr-99-minutos.github.io/CHL_SPT_WMS/</span>
+        <span class="open-btn">Abrir →</span>
+      </div>
+    </a>
+
+    <a class="card" href="https://mr-99-minutos.github.io/CHL_SPT_XXS_WMS/" target="_blank">
+      <div class="card-header">
+        <div class="card-icon" style="background:#f0e6ff">📦</div>
+        <div class="card-meta">
+          <div class="card-title">SPT XXS</div>
+          <div class="card-sub">Sorter Loop · RMRU</div>
+        </div>
+      </div>
+      <div class="card-desc">
+        Layout del sorter XXS con 124 posiciones. Zonas 001–009 + series regionales 200–900.
+        Incluye Correos (SPT.801).
+      </div>
+      <div class="card-tags">
+        <span class="tag tag-purple">XXS</span>
+        <span class="tag tag-purple">124 posiciones</span>
+        <span class="tag tag-green">Mapa</span>
+      </div>
+      <div class="card-footer">
+        <span class="card-url">mr-99-minutos.github.io/CHL_SPT_XXS_WMS/</span>
+        <span class="open-btn">Abrir →</span>
+      </div>
+    </a>
+
+  </div>
+
+  <!-- Polígonos / Fusionados (WIP placeholders) -->
+  <p class="section-title">Mapas de Polígonos — SMD / SPT</p>
+  <div class="grid">
+
+    <div class="card wip">
+      <div class="card-header">
+        <div class="card-icon" style="background:#e6f4ea">🗺</div>
+        <div class="card-meta">
+          <div class="card-title">SMD Regular <span class="wip-badge">próximamente</span></div>
+          <div class="card-sub">167 zonas fusionadas</div>
+        </div>
+      </div>
+      <div class="card-desc">Cobertura SMD Regular consolidada. 538 polígonos individuales agrupados en 167 Nomenclaturas.</div>
+      <div class="card-tags">
+        <span class="tag tag-teal">SMD</span>
+        <span class="tag tag-teal">Regular</span>
+      </div>
+      <div class="card-footer"><span></span><span class="open-btn" style="background:#ccc">Pronto</span></div>
+    </div>
+
+    <div class="card wip">
+      <div class="card-header">
+        <div class="card-icon" style="background:#fff3e0">🗺</div>
+        <div class="card-meta">
+          <div class="card-title">SPT XXS — Mapa <span class="wip-badge">próximamente</span></div>
+          <div class="card-sub">124 zonas fusionadas</div>
+        </div>
+      </div>
+      <div class="card-desc">Cobertura SPT XXS consolidada con proveedores Correos, Chevalier, PDQ y más.</div>
+      <div class="card-tags">
+        <span class="tag tag-orange">SPT</span>
+        <span class="tag tag-orange">XXS</span>
+      </div>
+      <div class="card-footer"><span></span><span class="open-btn" style="background:#ccc">Pronto</span></div>
+    </div>
+
+  </div>
+
+</main>
+
+<footer>
+  99minutos · Chile Logística · Kit de Cobertura v2
+</footer>
+
+</body>
+</html>
